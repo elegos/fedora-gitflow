@@ -64,12 +64,10 @@ for scriptFile in $scriptFiles ; do
 done
 
 # Hook files
-install -d "${outShareHooksDir}"
 for hookFile in $hookFiles ; do
   install -v -m 0644 "%{srcdir}/hooks/$hookFile" "${outShareHooksDir}"
 
 # License and contributors
-install -d "${outShareDocsDir}"
 install -m644 "%{srcdir}/AUTHORS" "${outShareDocsDir}/AUTHORS"
 install -m644 "%{srcdir}/LICENSE" "${outShareDocsDir}/LICENSE"
 install -m644 "%{srcdir}/README.md" "${outShareDocsDir}/README.md"
