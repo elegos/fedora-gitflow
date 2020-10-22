@@ -34,7 +34,7 @@ pushd %{srcdir}
 popd
 
 %build
-pushd %{srcdir}/build
+pushd %{srcdir}
   # nothing to do
 popd
 
