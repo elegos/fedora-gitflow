@@ -66,6 +66,7 @@ done
 # Hook files
 for hookFile in $hookFiles ; do
   install -v -m 0644 "%{srcdir}/hooks/$hookFile" "${outShareHooksDir}"
+done
 
 # License and contributors
 install -m644 "%{srcdir}/AUTHORS" "${outShareDocsDir}/AUTHORS"
