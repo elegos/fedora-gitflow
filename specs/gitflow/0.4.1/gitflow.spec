@@ -34,13 +34,10 @@ pushd %{srcdir}
 popd
 
 %build
-pushd %{srcdir}
-  # nothing to do
-popd
+# n/a
 
 %install
 # Variables
-buildDir="%{srcdir}/build/liteide"
 outBinDir="%{buildroot}%{_bindir}"
 outShareDir="%{buildroot}%{_datarootdir}/gitflow"
 outShareDocsDir="${outShareDir}/docs"
@@ -51,19 +48,19 @@ scriptFiles="git-flow-init git-flow-feature git-flow-hotfix git-flow-release git
 install -v -d -m 0755 "%{installPrefix}"
 # Exec files
 for execFile in $execFiles ; do
-	install -v -m 0755 "%{buildDir}/$execFile" "${outBinDir}"
+	install -v -m 0755 "%{srcdir}/$execFile" "${outBinDir}"
 done
 
 # Script files
 for scriptFile in $scriptFiles ; do
-  install -v -m 0644 "%{buildDir}/$scriptFile" "${outBinDir}"
+  install -v -m 0644 "%{srcdir}/$scriptFile" "${outBinDir}"
 done
 
 # License and contributors
 install -d "${outShareDocsDir}"
-install -m644 "${buildDir}/AUTHORS" "${outShareDocsDir}/AUTHORS"
-install -m644 "${buildDir}/LICENSE" "${outShareDocsDir}/LICENSE"
-install -m644 "${buildDir}/README.mdown" "${outShareDocsDir}/README.md"
+install -m644 "${srcdir}/AUTHORS" "${outShareDocsDir}/AUTHORS"
+install -m644 "${srcdir}/LICENSE" "${outShareDocsDir}/LICENSE"
+install -m644 "${srcdir}/README.mdown" "${outShareDocsDir}/README.md"
 
 %files
 %defattr(-,root,root,-)
