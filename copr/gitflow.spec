@@ -1,1 +1,1 @@
-../specs/gitflow/0.4.1/gitflow.spec
+../specs/gitflow/1.12.3/gitflow.spec
