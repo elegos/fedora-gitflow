@@ -45,7 +45,11 @@ outShareDocsDir="${outShareDir}/docs"
 execFiles="git-flow"
 scriptFiles="git-flow-init git-flow-feature git-flow-hotfix git-flow-release git-flow-support git-flow-version gitflow-common gitflow-shFlags"
 
-install -v -d -m 0755 "%{installPrefix}"
+# Create output dirs
+install -v -d -m 0755 "${outBinDir}"
+install -v -d -m 0755 "${outShareDir}"
+install -v -d -m 0755 "${outShareDocsDir}"
+
 # Exec files
 for execFile in $execFiles ; do
 	install -v -m 0755 "%{srcdir}/$execFile" "${outBinDir}"
