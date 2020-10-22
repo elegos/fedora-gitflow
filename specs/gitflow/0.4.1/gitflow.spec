@@ -62,9 +62,9 @@ done
 
 # License and contributors
 install -d "${outShareDocsDir}"
-install -m644 "${srcdir}/AUTHORS" "${outShareDocsDir}/AUTHORS"
-install -m644 "${srcdir}/LICENSE" "${outShareDocsDir}/LICENSE"
-install -m644 "${srcdir}/README.mdown" "${outShareDocsDir}/README.md"
+install -m644 "%{srcdir}/AUTHORS" "${outShareDocsDir}/AUTHORS"
+install -m644 "%{srcdir}/LICENSE" "${outShareDocsDir}/LICENSE"
+install -m644 "%{srcdir}/README.mdown" "${outShareDocsDir}/README.md"
 
 %files
 %defattr(-,root,root,-)
