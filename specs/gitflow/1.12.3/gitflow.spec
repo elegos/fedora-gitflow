@@ -77,6 +77,7 @@ install -m644 "%{srcdir}/README.md" "${outShareDocsDir}/README.md"
 %defattr(-,root,root,-)
 %doc %{_datarootdir}/gitflow/docs/README.md
 %license %{_datarootdir}/gitflow/docs/LICENSE
+%{_bindir}/git-flow
 %{_bindir}/git-flow-init
 %{_bindir}/git-flow-feature
 %{_bindir}/git-flow-bugfix
